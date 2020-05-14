@@ -39,6 +39,8 @@ $product = $statement->fetch(PDO::FETCH_ASSOC);
 <div class="container">
 <div class="row">
 <div class="col-md-6">
+
+    <!-- ФОРМА -->
     <form action="edit-update-db.php" method="post">
         <div class="form-group">
             <h1>Добавление продукта</h1>
