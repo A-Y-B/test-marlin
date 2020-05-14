@@ -25,6 +25,7 @@ $products = $statement->fetchAll(PDO::FETCH_ASSOC);
         <div class="row">
             <div class="col-md-10">
                 <h1>Мои продукты</h1>
+                <hr>
                 <a href="create.php" class="btn btn-success">Добавить</a>
                 <table class="table">
                     <thead>
@@ -49,7 +50,7 @@ $products = $statement->fetchAll(PDO::FETCH_ASSOC);
                                 </td>
                                 <td>
                                     <a href="edit.php?id=<?php echo $product['id']; ?>" class="btn btn-warning">Изменить</a>
-                                    <a href="#" class="btn btn-danger" onclick="return confirm('Вы уверены в удалении?')">Удалить</a>
+                                    <a href="delete.php?id=<?php echo $product['id'];?>" class="btn btn-danger" onclick="return confirm('Вы уверены в удалении?')">Удалить</a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
