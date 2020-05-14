@@ -1,0 +1,14 @@
+
+body {
+    padding-top: 75px;
+    padding-left: 555px;
+}
+
+h1, h2, h3 {
+    color: brown;
+}
+
+.form-control {
+    margin-top: 12px;
+    margin-bottom: 25px;
+}
