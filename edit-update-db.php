@@ -14,7 +14,7 @@ $sql = "UPDATE products SET title=?, description=?, status=? WHERE id=?";
 //  prepare($sql); Подготавливает запрос к выполнению и возвращает связанный с этим запросом объект
 $statement = $pdo->prepare($sql);
 
-//  bindValue - передаем значение ( первый параметр - номер первого ключа, сдесь он title )
+//  bindValue - метод передает значение ( первый параметр - номер первого ключа, сдесь он title )
 //  $statement->bindValue(1, $title); кладет $title в первый ключ - title=? в - ? , в запрос -
 // "UPDATE products SET title=?, description=?, status=? WHERE id=?";
 $statement->bindValue(1, $title);
