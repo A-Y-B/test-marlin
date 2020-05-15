@@ -25,8 +25,8 @@ $products = $statement->fetchAll(PDO::FETCH_ASSOC);
         <div class="row">
             <div class="col-md-10">
                 <h1>Мои продукты</h1>
-                <hr>
                 <a href="create.php" class="btn btn-success">Добавить</a>
+                <hr>
                 <table class="table">
                     <thead>
                     <tr>

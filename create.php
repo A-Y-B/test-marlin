@@ -1,4 +1,3 @@
-<!-- План действий -->
 <!--
 1. Создать обработчик create-store-db.php
     1.1 Настроить форму
@@ -11,6 +10,13 @@
 4. Выполнить запрос
 5. Подставить данные в запрос
 6. Переадресация пользователя на главную
+-->
+<!-- Загрузка картинки -->
+<!--
+1. Создать форму для отправки картинки
+2. Дописать скрипт который будет обрабатывать форму в файле create-store-db.php
+    2.1 Сгенерировать новое название для картинки
+    2.2 Сохранить картинку в папку uploads
 -->
 <!doctype html>
 <html lang="en">
@@ -30,18 +36,23 @@
     <div class="row">
         <div class="col-md-6">
             <h1>Добавление продукта</h1>
-            <form action="create-store-db.php" method="post">
 
+            <!-- form -->
+            <form action="create-store-db.php" method="post" enctype="multipart/form-data">
+                <!-- title -->
                 <div class="form-group">
                     <label for="">Название</label>
+
                     <input name="title" type="text" class="form-control">
                 </div>
-
+                <!-- description -->
                 <div class="form-group">
                     <label for="">Описание</label>
+
                     <textarea name="description" class="form-control" id="" cols="30" rows="10"></textarea>
                 </div>
 
+                <!-- category -->
 <!--                <div class="form-group">-->
 <!--                    <label for="">Категория</label>-->
 <!--                    <select name="" id="">-->
@@ -51,19 +62,23 @@
 <!--                    </select>-->
 <!--                </div>-->
 
+                <!-- image -->
                 <div class="form-group">
                     <label for="">Картинка</label>
 
-                    <input type="file">
+                    <input name="image" type="file">
                 </div>
 
+                <!-- checkbox -->
                 <div class="form-group">
                     <label for="">Показывать</label>
 
                     <input name="status" type="checkbox">
                 </div>
 
+                <!-- btn -->
                 <div class="form-group">
+
                     <button class="btn btn-success" type="submit">Добавить</button>
                 </div>
             </form>
