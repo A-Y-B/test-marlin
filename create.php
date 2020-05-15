@@ -50,13 +50,16 @@
 <!--                        <option value="">Новая категория</option>-->
 <!--                    </select>-->
 <!--                </div>-->
-<!--                <div class="form-group">-->
-<!--                    <label for="">Картинка</label>-->
-<!--                    <input type="file">-->
-<!--                </div>-->
+
+                <div class="form-group">
+                    <label for="">Картинка</label>
+
+                    <input type="file">
+                </div>
 
                 <div class="form-group">
                     <label for="">Показывать</label>
+
                     <input name="status" type="checkbox">
                 </div>
 
