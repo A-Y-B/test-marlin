@@ -42,67 +42,68 @@ $categories = $statement->fetchAll(PDO::FETCH_ASSOC);
 
     <title>test-marlin\create.php</title>
 </head>
+
 <body>
 <div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <h1>Добавление продукта</h1>
+<div class="row">
+<div class="col-md-6">
+    <h1>Добавление продукта</h1>
 
-            <!-- form -->
-            <form action="create-store-db.php" method="post" enctype="multipart/form-data">
-                <!-- title -->
-                <div class="form-group">
-                    <label for="">Название</label>
+    <!-- form -->
+    <form action="create-store-db.php" method="post" enctype="multipart/form-data">
+        <!-- title -->
+        <div class="form-group">
+            <label for="">Название</label>
 
-                    <input name="title" type="text" class="form-control">
-                </div>
-                <!-- description -->
-                <div class="form-group">
-                    <label for="">Описание</label>
-
-                    <textarea name="description" class="form-control" id="" cols="30" rows="10"></textarea>
-                </div>
-
-                <!-- categories -->
-                <div class="form-group">
-                    <label for="">Категории</label>
-                        <select name="categories" id="">
-
-<!--                        foreach ($categories as $category)-->
-                            <?php foreach ($categories as $category): ?>
-
-                                    <option value=""><?php echo $category['title']; ?></option>
-
-                            <?php endforeach; ?>
-                        </select>
-<!--                    <select name="categories" id="">-->
-<!--                        <option value="">Ноутбуки</option>-->
-<!--                        <option value="">Компъютеры</option>-->
-<!--                    </select>-->
-                </div>
-
-                <!-- image-->
-                <div class="form-group">
-                    <label for="">Картинка</label>
-
-                    <input name="image" type="file">
-                </div>
-
-                <!-- checkbox -->
-                <div class="form-group">
-                    <label for="">Показывать</label>
-
-                    <input name="status" type="checkbox">
-                </div>
-
-                <!-- btn -->
-                <div class="form-group">
-
-                    <button class="btn btn-success" type="submit">Добавить</button>
-                </div>
-            </form>
+            <input name="title" type="text" class="form-control">
         </div>
-    </div>
+        <!-- description -->
+        <div class="form-group">
+            <label for="">Описание</label>
+
+            <textarea name="description" class="form-control" id="" cols="30" rows="10"></textarea>
+        </div>
+
+        <!-- categories -->
+        <div class="form-group">
+            <label for="">Категории</label>
+                <select name="categories" id="">
+
+                    <!-- foreach ($categories as $category)-->
+                    <?php foreach ($categories as $category): ?>
+
+                            <option value=""><?php echo $category['title']; ?></option>
+
+                    <?php endforeach; ?>
+                </select>
+                <!-- <select name="categories" id="">-->
+                <!--     <option value="">Ноутбуки</option>-->
+                <!--     <option value="">Компъютеры</option>-->
+                <!-- </select>-->
+        </div>
+
+        <!-- image-->
+        <div class="form-group">
+            <label for="">Картинка</label>
+
+            <input name="image" type="file">
+        </div>
+
+        <!-- checkbox -->
+        <div class="form-group">
+            <label for="">Показывать</label>
+
+            <input name="status" type="checkbox">
+        </div>
+
+        <!-- btn -->
+        <div class="form-group">
+
+            <button class="btn btn-success" type="submit">Добавить</button>
+        </div>
+    </form>
+</div>
+</div>
 </div>
 
 </body>
