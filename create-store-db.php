@@ -1,5 +1,5 @@
 <?php
-
+//var_dump($_POST);die();
 //var_dump($_FILES['image']);die();
 
 $title = $_POST['title'];
@@ -15,6 +15,9 @@ if (isset($_POST['status'])) {
 */
 //var_dump($status);die();
 
+//$image = $_FILES['image'];
+//$categories = $_POST['categories'];
+
 $pdo = new PDO('mysql:host=localhost; dbname=student;', 'root', '');
 
 $sql = 'INSERT INTO products (title, description, status) VALUES (:title, :description, :status)';
@@ -26,7 +29,7 @@ $statement->execute([
     'status' => $status
 ]);
 
-//var_dump($sql);die();
+//var_dump($statement);die();
 
 //  Сохранение картинки в папку - uploads
 $name = $_FILES['image']['name'];

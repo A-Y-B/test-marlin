@@ -17,7 +17,7 @@ $products = $statement->fetchAll(PDO::FETCH_ASSOC);
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>test-marlin\index.php</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="my.css">
+    <link rel="stylesheet" href="not/my.css">
 </head>
 
 <body>
@@ -25,7 +25,7 @@ $products = $statement->fetchAll(PDO::FETCH_ASSOC);
         <div class="row">
             <div class="col-md-10">
                 <h1>Мои продукты</h1>
-                <a href="create.php" class="btn btn-success">Добавить</a>
+                <a href="create-index.php" class="btn btn-success">Добавить</a>
                 <hr>
                 <table class="table">
                     <thead>
@@ -43,7 +43,7 @@ $products = $statement->fetchAll(PDO::FETCH_ASSOC);
                         <?php foreach ($products as $product): ?>
                             <tr>
                                 <td><?php echo $product['id']; ?></td>
-                                <td><a href="show.php"><?php echo $product['title']; ?></a></td>
+                                <td><a href="show.php?id=<?php echo $product['id']; ?>"><?php echo $product['title']; ?></a></td>
                                 <td><?php echo $product['description']; ?></td>
                                 <td>
                                     <img src="<?php echo $product['image']; ?>" alt="">

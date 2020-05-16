@@ -18,6 +18,17 @@
     2.1 Сгенерировать новое название для картинки
     2.2 Сохранить картинку в папку uploads
 -->
+
+<?php
+// Подключение и выборка с БД
+$pdo = new PDO('mysql:host=localhost; dbname=student;', 'root', '');
+$sql = 'SELECT * FROM categories';
+$statement = $pdo->query($sql);
+
+$categories = $statement->fetchAll(PDO::FETCH_ASSOC);
+//var_dump($products);die;
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -27,7 +38,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="my.css">
+    <link rel="stylesheet" href="not/my.css">
 
     <title>test-marlin\create.php</title>
 </head>
@@ -52,17 +63,25 @@
                     <textarea name="description" class="form-control" id="" cols="30" rows="10"></textarea>
                 </div>
 
-                <!-- category -->
-<!--                <div class="form-group">-->
-<!--                    <label for="">Категория</label>-->
-<!--                    <select name="" id="">-->
-<!--                        <option value="">Ноутбуки</option>-->
-<!--                        <option value="">Телефоны</option>-->
-<!--                        <option value="">Новая категория</option>-->
-<!--                    </select>-->
-<!--                </div>-->
+                <!-- categories -->
+                <div class="form-group">
+                    <label for="">Категории</label>
+                        <select name="categories" id="">
 
-                <!-- image -->
+<!--                        foreach ($categories as $category)-->
+                            <?php foreach ($categories as $category): ?>
+
+                                    <option value=""><?php echo $category['title']; ?></option>
+
+                            <?php endforeach; ?>
+                        </select>
+<!--                    <select name="categories" id="">-->
+<!--                        <option value="">Ноутбуки</option>-->
+<!--                        <option value="">Компъютеры</option>-->
+<!--                    </select>-->
+                </div>
+
+                <!-- image-->
                 <div class="form-group">
                     <label for="">Картинка</label>
 

@@ -1,3 +1,22 @@
+<?php
+//var_dump($_GET);
+//  SELECT * FROM users WHERE id = :id   ---   выбрать всё из таблици users где id = :id
+//  соединение с базой
+$pdo = new PDO('mysql:host=localhost;dbname=student;', "root", "");
+//  подготовка запроса, для извлечения из бд инфы
+$sql = 'SELECT * FROM products WHERE id=:id';
+//  так как в запросе есть переменная, его нужно сперва подготовить, пропустив через метод PDO prepare():
+$statement = $pdo->prepare($sql);
+//var_dump($statement);die();
+//  выполнение запроса
+$statement->execute($_GET);
+//var_dump($statement);die();
+//  fetchAll — Возвращает массив, содержащий все строки результирующего набора
+//  FETCH_ASSOC — Извлекает результирующий ряд в виде ассоциативного массива
+$product = $statement->fetch(PDO::FETCH_ASSOC);
+//var_dump($user);die;
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -5,22 +24,27 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>test/show.php</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-
+    <link rel="stylesheet" href="not/my.css">
 </head>
+
 <body>
 <div class="container">
     <div class="row">
         <div class="col-md-8">
-            <div><h1>Просмотр продукта - Ноутбук</h1></div>
-            <div><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate eius enim, illo quasi quo tenetur!</p></div>
-            <div><img src="https://picsum.photos/200" alt=""></div>
-            <div>Категория - Новая Категория</div>
-            <div>Статус - Показывать</div>
+
+            <h1>Просмотр продукта</h1>
+
+            <div>Продукт - <?php echo $product['title']; ?></div>
+
+            <p>Описание продукта - <?php echo $product['description']; ?></p>
+
+            <img src="<?php echo $product['image']; ?>" alt="">
         </div>
     </div>
 </div>
 
 </body>
 </html>
+
