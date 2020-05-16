@@ -1,7 +1,6 @@
 <?php
 
-var_dump($_FILES['image']);
-die();
+//var_dump($_FILES['image']);die();
 
 $title = $_POST['title'];
 $description = $_POST['description'];
