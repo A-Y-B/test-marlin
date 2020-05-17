@@ -29,7 +29,7 @@ $categories = $statement->fetchAll(PDO::FETCH_ASSOC);
     <hr>
     <a href="/index.php" >На главную страницу</a>
     <hr>
-    <a href="/categories/create-categories.php" class="btn btn-success">Добавить</a>
+    <a href="/categories/create-categories.php" class="btn btn-success">Добавить категорию</a>
     <hr>
     <table class="table">
         <thead>
