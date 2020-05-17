@@ -6,15 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Form</title>
-<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">-->
-
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/bootstrap-grid.css">
-    <link rel="stylesheet" href="css/bootstrap-reboot.css">
-    <link rel="stylesheet" href="css/bootstrap.css.map">
-    <link rel="stylesheet" href="css/bootstrap-grid.css.map">
-    <link rel="stylesheet" href="css/bootstrap-reboot.css.map">
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/my.css">
 </head>
 <body>
@@ -23,7 +15,7 @@
         <div class="col-md-6">
 
             <!-- action="pdo.php" -->
-            <form action="pdo.php" method="POST">
+            <form action="pdo.php" method="post">
 
                     <!--  name="name" -->
 <!--                    <div class="form-group">-->

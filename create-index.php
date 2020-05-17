@@ -40,7 +40,7 @@ $categories = $statement->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="not/my.css">
 
-    <title>test-marlin\create.php</title>
+    <title>test-marlin/create.php - Добавить</title>
 </head>
 
 <body>
@@ -69,7 +69,7 @@ $categories = $statement->fetchAll(PDO::FETCH_ASSOC);
             <label for="">Категории</label>
                 <select name="categories" id="">
 
-                    <!-- foreach ($categories as $category)-->
+                    <!-- foreach (ries as ry)-->
                     <?php foreach ($categories as $category): ?>
 
                             <option value=""><?php echo $category['title']; ?></option>
