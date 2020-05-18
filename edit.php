@@ -28,10 +28,11 @@ $product = $statement->fetch(PDO::FETCH_ASSOC);
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="not/my.css">
 
-    <title>test-marlin\edit.php</title>
+    <title>test-marlin\edit.php - Изменить</title>
 </head>
 
 
@@ -43,8 +44,8 @@ $product = $statement->fetch(PDO::FETCH_ASSOC);
     <!-- ФОРМА -->
     <form action="edit-update-db.php" method="post">
         <div class="form-group">
-            <h1>Добавление продукта</h1>
-            <label for="">Название</label>
+            <h1>Изменение продукта</h1>
+            <h5>Название</h5>
 
             <!-- input name="title" -->
             <input name="title" type="text" class="form-control" value="<?php echo $product['title']; ?>">

@@ -16,7 +16,7 @@ $categories = $statement->fetchAll(PDO::FETCH_ASSOC);
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../not/my.css">
+    <link rel="stylesheet" href="/not/my.css">
 
     <title>test-marlin/categories/categories.php - Категории</title>
 </head>
@@ -25,9 +25,9 @@ $categories = $statement->fetchAll(PDO::FETCH_ASSOC);
 <div class="container">
 <div class="row">
 <div class="col-md-10">
-    <h1>Мои Категории</h1>
+    <h1>Категории</h1>
     <hr>
-    <a href="/index.php" >На главную страницу</a>
+    <a href="/index.php" class="btn btn-info">Перейти на главную страницу</a>
     <hr>
     <a href="/categories/create-categories.php" class="btn btn-success">Добавить категорию</a>
     <hr>

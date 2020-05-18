@@ -24,9 +24,10 @@ $product = $statement->fetch(PDO::FETCH_ASSOC);
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>test/show.php</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="not/my.css">
+
+    <title>test/show.php - Просмотр продукта</title>
 </head>
 
 <body>

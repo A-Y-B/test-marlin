@@ -15,9 +15,11 @@ $products = $statement->fetchAll(PDO::FETCH_ASSOC);
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>test-marlin/index.php</title>
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="not/my.css">
+    <link rel="stylesheet" href="/not/my.css">
+
+    <title>test-marlin/index.php - Главная</title>
 </head>
 
 <body>
@@ -26,7 +28,7 @@ $products = $statement->fetchAll(PDO::FETCH_ASSOC);
             <div class="col-md-10">
                 <h1>Мои продукты</h1>
                 <hr>
-                <a href="/categories/categories.php">Категории</a>
+                <a href="/categories/categories.php" class="btn btn-info">Перейти в категории</a>
                 <hr>
                 <a href="create-index.php" class="btn btn-success">Добавить</a>
                 <hr>
