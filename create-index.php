@@ -49,7 +49,9 @@ $categories = $statement->fetchAll(PDO::FETCH_ASSOC);
 <div class="row">
 <div class="col-md-6">
     <h1>Добавление продукта</h1>
-
+    <hr>
+    <a href="/index.php" class="btn btn-info">Перейти на главную страницу</a>
+    <hr>
     <!-- form -->
     <form action="create-store-db.php" method="post" enctype="multipart/form-data">
         <!-- title -->
@@ -73,7 +75,7 @@ $categories = $statement->fetchAll(PDO::FETCH_ASSOC);
                     <!-- foreach -->
                     <?php foreach ($categories as $category): ?>
 
-                            <option value=""><?php echo $category['title']; ?></option>
+                        <option value="<?php echo $category['id']; ?>"><?php echo $category['title']; ?></option>
 
                     <?php endforeach; ?>
                 </select>
