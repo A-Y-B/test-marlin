@@ -21,8 +21,8 @@ $product = $statement->fetch(PDO::FETCH_ASSOC);
 ?>
 
 
-<!doctype html>
-<html lang="en">
+<!--<!doctype html>-->
+<HTML LANG="EN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -41,44 +41,45 @@ $product = $statement->fetch(PDO::FETCH_ASSOC);
 <div class="row">
 <div class="col-md-6">
 
-    <!-- ФОРМА -->
+    <!-- form -->
     <form action="edit-update-db.php" method="post" enctype="multipart/form-data">
+
+        <!-- input name="title" -->
         <div class="form-group">
             <h1>Изменение продукта</h1>
             <h5>Название</h5>
 
-            <!-- input name="title" -->
             <input name="title" type="text" class="form-control" value="<?php echo $product['title']; ?>">
         </div>
 
+        <!-- textarea name="description" -->
         <div class="form-group">
             <label for="">Описание</label>
 
-            <!-- textarea name="description" -->
             <textarea name="description" class="form-control" id="" cols="30" rows="10"><?php echo $product['description']; ?></textarea>
         </div>
 
-        <!-- image-->
+        <!-- name="image"-->
         <div class="form-group">
             <label for="">Картинка</label>
 
             <input name="image" type="file">
         </div>
         <div class="form-group">
-
-            <img src="uploads/<?php echo $product['image']; ?>" alt="">
+            <img src="uploads/<?php echo $product['image']; ?>" width="200" alt="">
         </div>
 
+        <!-- name="status" -->
         <div class="form-group">
             <label for="">Показывать</label>
 
-            <!-- input name="status" -->
             <input name="status" type="checkbox" <?php echo $product['status'] == 1 ? 'checked' : ''; ?>>
         </div>
 
         <!-- input type="hidden" name="id" -->
         <input type="hidden" name="id" value="<?php echo $product['id']; ?>">
 
+        <!-- button -->
         <div class="form-group">
             <button class="btn btn-warning">Изменить</button>
         </div>

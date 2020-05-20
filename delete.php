@@ -10,6 +10,18 @@
 $id = $_GET['id'];
 
 $pdo = new PDO('mysql:host=localhost; dbname=student;', 'root', '');
+
+$sql = "SELECT * FROM products WHERE id = ?";
+$statement = $pdo->prepare($sql);
+$statement->bindValue(1, $id);
+$statement->execute();
+$product = $statement->fetch(PDO::FETCH_ASSOC);
+
+if (is_file('uploads/' . $product['image'])) {
+    unlink("uploads/" . $product['image']);
+}
+
+
 $sql = "DELETE FROM products WHERE id = ?";
 
 $statement = $pdo->prepare($sql);
