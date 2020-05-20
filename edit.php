@@ -42,7 +42,7 @@ $product = $statement->fetch(PDO::FETCH_ASSOC);
 <div class="col-md-6">
 
     <!-- ФОРМА -->
-    <form action="edit-update-db.php" method="post">
+    <form action="edit-update-db.php" method="post" enctype="multipart/form-data">
         <div class="form-group">
             <h1>Изменение продукта</h1>
             <h5>Название</h5>
@@ -56,6 +56,17 @@ $product = $statement->fetch(PDO::FETCH_ASSOC);
 
             <!-- textarea name="description" -->
             <textarea name="description" class="form-control" id="" cols="30" rows="10"><?php echo $product['description']; ?></textarea>
+        </div>
+
+        <!-- image-->
+        <div class="form-group">
+            <label for="">Картинка</label>
+
+            <input name="image" type="file">
+        </div>
+        <div class="form-group">
+
+            <img src="uploads/<?php echo $product['image']; ?>" alt="">
         </div>
 
         <div class="form-group">
