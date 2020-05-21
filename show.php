@@ -27,7 +27,7 @@ $product = $statement->fetch(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="not/my.css">
 
-    <title>test/show.php - Просмотр продукта</title>
+    <title>test-marlin/show.php - Просмотр продукта</title>
 </head>
 
 <body>
@@ -36,10 +36,13 @@ $product = $statement->fetch(PDO::FETCH_ASSOC);
         <div class="col-md-8">
 
             <h1>Просмотр продукта</h1>
+            <hr>
+            <a href="/index.php" class="btn btn-info">Перейти на главную страницу</a>
+            <hr>
 
-            <div>Продукт - <?php echo $product['title']; ?></div>
+            <p>Продукт:  <?php echo $product['title']; ?></p>
 
-            <p>Описание продукта - <?php echo $product['description']; ?></p>
+            <p>Описание продукта:  <?php echo $product['description']; ?></p>
 
             <img src="<?php echo $product['image']; ?>" alt="">
         </div>

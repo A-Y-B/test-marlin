@@ -24,13 +24,15 @@ $categories = $statement->fetchAll(PDO::FETCH_ASSOC);
 <body>
 <div class="container">
 <div class="row">
-<div class="col-md-10">
+<div class="col-md-8">
+
     <h1>Категории</h1>
     <hr>
     <a href="/index.php" class="btn btn-info">Перейти на главную страницу</a>
     <hr>
     <a href="/categories/create-categories.php" class="btn btn-success">Добавить категорию</a>
     <hr>
+
     <table class="table">
         <thead>
             <tr>
@@ -41,23 +43,20 @@ $categories = $statement->fetchAll(PDO::FETCH_ASSOC);
         </thead>
 
         <tbody>
-            <!-- PHP foreach -->
-            <?php foreach ($categories as $category): ?>
-                <tr>
-                    <td>
-                        <?php echo $category['id']; ?>
-                    </td>
-                    <td>
-                        <a href="/categories/show.php?id=<?php echo $category['id']; ?>"><?php echo $category['title']; ?></a>
-                    </td>
+        <!-- PHP foreach -->
+        <?php foreach ($categories as $category): ?>
 
-                    <td>
-                        <a href="/categories/edit.php?id=<?php echo $category['id']; ?>" class="btn btn-warning">Изменить</a>
-                        <a href="/categories/delete.php?id=<?php echo $category['id'];?>" class="btn btn-danger" onclick="return confirm('Вы уверены в удалении?')">Удалить</a>
-                    </td>
-                </tr>
-            <?php endforeach; ?>
-            <!-- /PHP foreach -->
+            <tr>
+                <td><?php echo $category['id']; ?></td>
+                <td><?php echo $category['title']; ?></td>
+
+                <td>
+                    <a href="/categories/edit.php?id=<?php echo $category['id']; ?>" class="btn btn-warning">Изменить</a>
+                    <a href="/categories/delete.php?id=<?php echo $category['id'];?>" class="btn btn-danger" onclick="return confirm('Вы уверены в удалении?')">Удалить</a>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+        <!-- /PHP foreach -->
         </tbody>
     </table>
 </div>
@@ -66,4 +65,10 @@ $categories = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 </body>
 </html>
+
+
+
+
+
+
 

@@ -38,7 +38,7 @@ $categories = $statement->fetchAll(PDO::FETCH_ASSOC);
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="not/my.css">
+    <link rel="stylesheet" href="/not/my.css">
 
     <title>test-marlin/create.php - Добавить</title>
 
@@ -70,19 +70,15 @@ $categories = $statement->fetchAll(PDO::FETCH_ASSOC);
         <!-- categories -->
         <div class="form-group">
             <label for="">Категории</label>
-                <select name="categories" id="">
+            <select name="category_id" class="form-control">
 
-                    <!-- foreach -->
-                    <?php foreach ($categories as $category): ?>
+                <!-- foreach -->
+                <?php foreach ($categories as $category): ?>
 
-                        <option value="<?php echo $category['id']; ?>"><?php echo $category['title']; ?></option>
+                    <option value="<?php echo $category['id']; ?>"><?php echo $category['title']; ?></option>
 
-                    <?php endforeach; ?>
-                </select>
-                <!-- <select name="categories" id="">-->
-                <!--     <option value="">Ноутбуки</option>-->
-                <!--     <option value="">Компъютеры</option>-->
-                <!-- </select>-->
+                <?php endforeach; ?>
+            </select>
         </div>
 
         <!-- image-->

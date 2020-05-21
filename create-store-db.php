@@ -15,7 +15,7 @@ if (isset($_POST['status'])) {
 */
 //var_dump($status);die();
 
-$category_id = $_POST['categories'];
+$category_id = $_POST['category_id'];
 //var_dump($category_id);die();
 
 // проверяем, если картинка загружена, то сохраняем название в БД, если нет то в БД храним null

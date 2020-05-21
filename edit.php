@@ -17,6 +17,10 @@ $statement->bindValue(1, $id);
 $statement->execute();
 $product = $statement->fetch(PDO::FETCH_ASSOC);
 
+$sql = 'SELECT * FROM categories';
+$statement = $pdo->query($sql);
+$categories = $statement->fetchAll(PDO::FETCH_ASSOC);
+
 //var_dump($product);die();
 ?>
 
@@ -32,7 +36,7 @@ $product = $statement->fetch(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="not/my.css">
 
-    <title>test-marlin\edit.php - Изменить</title>
+    <title>test-marlin/edit.php - Изменить</title>
 </head>
 
 
@@ -40,13 +44,12 @@ $product = $statement->fetch(PDO::FETCH_ASSOC);
 <div class="container">
 <div class="row">
 <div class="col-md-6">
-
+    <h1>Изменение продукта</h1>
     <!-- form -->
     <form action="edit-update-db.php" method="post" enctype="multipart/form-data">
 
         <!-- input name="title" -->
         <div class="form-group">
-            <h1>Изменение продукта</h1>
             <h5>Название</h5>
 
             <input name="title" type="text" class="form-control" value="<?php echo $product['title']; ?>">
@@ -54,15 +57,28 @@ $product = $statement->fetch(PDO::FETCH_ASSOC);
 
         <!-- textarea name="description" -->
         <div class="form-group">
-            <label for="">Описание</label>
+            <H5>Описание</H5>
 
             <textarea name="description" class="form-control" id="" cols="30" rows="10"><?php echo $product['description']; ?></textarea>
         </div>
 
+        <!-- categories -->
+        <div class="form-group">
+            <H5>Категории</H5>
+            <select name="category_id" class="form-control">
+
+                <!-- foreach -->
+                <?php foreach ($categories as $category): ?>
+
+                    <option value="<?php echo $category['id']; ?>" <?php echo $category['id'] == $product['category_id'] ? 'selected' : ''; ?>><?php echo $category['title']; ?></option>
+
+                <?php endforeach; ?>
+            </select>
+        </div>
+
         <!-- name="image"-->
         <div class="form-group">
-            <label for="">Картинка</label>
-
+            <H5>Картинка</H5>
             <input name="image" type="file">
         </div>
         <div class="form-group">
@@ -71,8 +87,7 @@ $product = $statement->fetch(PDO::FETCH_ASSOC);
 
         <!-- name="status" -->
         <div class="form-group">
-            <label for="">Показывать</label>
-
+            <H5>Показывать</H5>
             <input name="status" type="checkbox" <?php echo $product['status'] == 1 ? 'checked' : ''; ?>>
         </div>
 
