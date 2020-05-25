@@ -40,7 +40,7 @@ $statement->execute([
     'image' => $image,
     'category_id' => $category_id
 ]);
-//var_dump($statement);die();
+// var_dump($statement);die();
 
 //  Сохранение картинки в папку - uploads
 $name = $_FILES['image']['name'];
