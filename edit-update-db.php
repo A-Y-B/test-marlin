@@ -2,7 +2,7 @@
 //  $_POST['title']; получает title из формы на edit.php методом post
 $title       = $_POST['title'];
 $description = $_POST['description'];
-//  isset — Определяет, была ли установлена переменная status, если да, то выводит 1, если нет, то выводит 0
+//  isset — Определяет, есть ли переменная status, если да, то выводит 1, если нет, то выводит 0
 $status      = isset($_POST['status']) ? 1 : 0;
 $category_id = $_POST['category_id'];
 $id          = $_POST['id'];

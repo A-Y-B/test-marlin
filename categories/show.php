@@ -1,23 +1,21 @@
 <?php
-//var_dump($_GET); die;
-//  SELECT * FROM users WHERE id = :id   ---   выбрать всё из таблици users где id = :id
-//  соединение с базой
-$pdo = new PDO('mysql:host=localhost;dbname=student;', "root", "");
-//  подготовка запроса, для извлечения из бд инфы
-$sql = 'SELECT * FROM categories WHERE id=:id';
-//
 
-//
-//  так как в запросе есть переменная, его нужно сперва подготовить, пропустив через метод PDO prepare():
+$pdo = new PDO('mysql:host=localhost;dbname=student;', "root", "");
+
+$sql = 'SELECT * FROM categories WHERE id=:id';
+
 $statement = $pdo->prepare($sql);
-//var_dump($statement);die();
-//  выполнение запроса
 $statement->execute($_GET);
-//var_dump($statement);die();
-//  fetchAll — Возвращает массив, содержащий все строки результирующего набора
-//  FETCH_ASSOC — Извлекает результирующий ряд в виде ассоциативного массива
 $categories = $statement->fetch(PDO::FETCH_ASSOC);
-//var_dump($user);die;
+
+
+$sql = 'SELECT * FROM products WHERE category_id=:id';
+$statement = $pdo->prepare($sql);
+$statement->execute($_GET);
+
+$products = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+//var_dump($products);die;
 ?>
 
 <!doctype html>
@@ -40,15 +38,23 @@ $categories = $statement->fetch(PDO::FETCH_ASSOC);
 
             <h1>Просмотр категории</h1>
 
-            <div>Продукты категории - <?php echo $categories['title']; ?></div>
+            <hr>
+            <a href="/index.php" class="btn btn-info">Перейти на главную страницу</a>
+            <hr>
+            <a href="/categories/categories.php" class="btn btn-success">Перейти в категории</a>
+            <hr>
 
-<!--            --><?php //foreach ($categories as $category): ?>
-<!--            <tr>-->
-<!--                <td>-->
-<!--                    --><?php //echo $category['title']; ?>
-<!--                </td>-->
-<!--            </tr>-->
-<!--            --><?php //endforeach; ?>
+            <h4>Продукты категории - <?php echo $categories['title']; ?></h4>
+
+            <hr>
+
+            <?php foreach ($products as $product): ?>
+            <tr>
+                <td>
+                    <pre><p><?php echo $product['title']; ?></p></pre>
+                </td>
+            </tr>
+            <?php endforeach; ?>
 
         </div>
     </div>

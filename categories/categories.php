@@ -48,8 +48,8 @@ $categories = $statement->fetchAll(PDO::FETCH_ASSOC);
 
             <tr>
                 <td><?php echo $category['id']; ?></td>
-                <td><?php echo $category['title']; ?></td>
-
+                <td>
+                    <a href="/categories/show.php?id=<?php echo $category['id']; ?>"><?php echo $category['title']; ?></td></a>
                 <td>
                     <a href="/categories/edit.php?id=<?php echo $category['id']; ?>" class="btn btn-warning">Изменить</a>
                     <a href="/categories/delete.php?id=<?php echo $category['id'];?>" class="btn btn-danger" onclick="return confirm('Вы уверены в удалении?')">Удалить</a>

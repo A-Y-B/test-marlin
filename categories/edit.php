@@ -35,36 +35,35 @@ $category = $statement->fetch(PDO::FETCH_ASSOC);
 </head>
 
 <body>
-<div class="container">
-<div class="row">
-<div class="col-md-6">
-    <h1>Изменение категории</h1>
-    <hr>
-    <a href="/index.php" class="btn btn-info">Перейти на главную страницу</a>
-    <hr>
-    <a href="/categories/categories.php" class="btn btn-secondary">Перейти на страницу - Категории</a>
-    <hr>
+    <div class="container">
+    <div class="row">
+    <div class="col-md-6">
+        <h1>Изменение категории</h1>
+        <hr>
+        <a href="/index.php" class="btn btn-info">Перейти на главную страницу</a>
+        <hr>
+        <a href="/categories/categories.php" class="btn btn-secondary">Перейти на страницу - Категории</a>
+        <hr>
 
-    <!-- ФОРМА -->
-    <form action="edit-update-db.php" method="post" enctype="multipart/form-data">
-        <div class="form-group">
-            <h5>Название категории</h5>
+        <!-- ФОРМА -->
+        <form action="edit-update-db.php" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <h5>Название категории</h5>
 
-            <!-- input name="title" -->
-            <input name="title" type="text" class="form-control" value="<?php echo $category['title']; ?>">
-        </div>
+                <!-- input name="title" -->
+                <input name="title" type="text" class="form-control" value="<?php echo $category['title']; ?>">
+            </div>
 
-        <!-- input type="hidden" name="id" -->
-        <input type="hidden" name="id" value="<?php echo $category['id']; ?>">
+            <!-- input type="hidden" name="id" -->
+            <input type="hidden" name="id" value="<?php echo $category['id']; ?>">
 
-        <div class="form-group">
-            <button class="btn btn-warning">Изменить</button>
-        </div>
-    </form>
-</div> <!-- /<div class="col-md-6"> -->
-</div> <!-- /<div class="row"> -->
-</div> <!-- /<div class="container"> -->
-
+            <div class="form-group">
+                <button class="btn btn-warning">Изменить</button>
+            </div>
+        </form>
+    </div> <!-- /<div class="col-md-6"> -->
+    </div> <!-- /<div class="row"> -->
+    </div> <!-- /<div class="container"> -->
 </body>
 </html>
 

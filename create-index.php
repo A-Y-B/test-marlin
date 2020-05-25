@@ -1,3 +1,4 @@
+<!-- Описание действий -->
 <!--
 1. Создать обработчик create-store-db.php
     1.1 Настроить форму
@@ -10,9 +11,9 @@
 4. Выполнить запрос
 5. Подставить данные в запрос
 6. Переадресация пользователя на главную
--->
-<!-- Загрузка картинки -->
-<!--
+
+Загрузка картинки
+
 1. Создать форму для отправки картинки
 2. Дописать скрипт который будет обрабатывать форму в файле create-store-db.php
     2.1 Сгенерировать новое название для картинки
@@ -56,20 +57,20 @@ $categories = $statement->fetchAll(PDO::FETCH_ASSOC);
     <form action="create-store-db.php" method="post" enctype="multipart/form-data">
         <!-- title -->
         <div class="form-group">
-            <label for="">Название</label>
+            <h5>Название</h5>
 
             <input name="title" type="text" class="form-control">
         </div>
         <!-- description -->
         <div class="form-group">
-            <label for="">Описание</label>
+            <h5>Описание</h5>
 
             <textarea name="description" class="form-control" id="" cols="30" rows="10"></textarea>
         </div>
 
         <!-- categories -->
         <div class="form-group">
-            <label for="">Категории</label>
+            <h5>Категории</h5>
             <select name="category_id" class="form-control">
 
                 <!-- foreach -->
@@ -83,14 +84,14 @@ $categories = $statement->fetchAll(PDO::FETCH_ASSOC);
 
         <!-- image-->
         <div class="form-group">
-            <label for="">Картинка</label>
+            <h5>Картинка</h5>
 
             <input name="image" type="file">
         </div>
 
         <!-- checkbox -->
         <div class="form-group">
-            <label for="">Показывать</label>
+            <h5>Показывать</h5>
 
             <input name="status" type="checkbox">
         </div>
