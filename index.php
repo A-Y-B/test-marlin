@@ -31,7 +31,10 @@ $products = $statement->fetchAll(PDO::FETCH_ASSOC);
     <hr>
     <a href="/categories/categories.php" class="btn btn-info">Перейти в категории</a>
     <hr>
+
+    <!-- Кнопка Добавить -->
     <a href="create-index.php" class="btn btn-success">Добавить</a>
+
     <hr>
     <table class="table">
         <thead>
@@ -49,13 +52,22 @@ $products = $statement->fetchAll(PDO::FETCH_ASSOC);
             <?php foreach ($products as $product): ?>
                 <tr>
                     <td><?php echo $product['id']; ?></td>
+
+                    <!-- Ссылка на продукт в названии продукта -->
                     <td><a href="show.php?id=<?php echo $product['id']; ?>"><?php echo $product['title']; ?></a></td>
+
                     <td><?php echo $product['description']; ?></td>
+
                     <td>
                         <img src="<?php echo $product['image']; ?>" alt="">
                     </td>
+
+                    <!-- Кнопки -->
                     <td>
+                        <!-- Кнопка Изменить -->
                         <a href="edit.php?id=<?php echo $product['id']; ?>" class="btn btn-warning">Изменить</a>
+
+                        <!-- Кнопка Удалить -->
                         <a href="delete.php?id=<?php echo $product['id'];?>" class="btn btn-danger" onclick="return confirm('Вы уверены в удалении?')">Удалить</a>
                     </td>
                 </tr>

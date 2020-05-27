@@ -53,6 +53,7 @@ $categories = $statement->fetchAll(PDO::FETCH_ASSOC);
     <hr>
     <a href="/index.php" class="btn btn-info">Перейти на главную страницу</a>
     <hr>
+
     <!-- form -->
     <form action="create-store-db.php" method="post" enctype="multipart/form-data">
         <!-- title -->

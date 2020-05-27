@@ -2,7 +2,7 @@
 //  $_POST['title']; получает title из формы на edit.php методом post
 $title       = $_POST['title'];
 $description = $_POST['description'];
-//  isset — Определяет, есть ли переменная status, если да, то выводит 1, если нет, то выводит 0
+//  isset — определяет, есть ли переменная status, если да, то выводит 1, если нет, то выводит 0
 $status      = isset($_POST['status']) ? 1 : 0;
 $category_id = $_POST['category_id'];
 $id          = $_POST['id'];
@@ -23,7 +23,10 @@ $statement->bindValue(1, $title);
 $statement->bindValue(2, $description);
 $statement->bindValue(3, $status);
 $statement->bindValue(4, $category_id);
-$statement->bindValue(5, $id);
+
+//
+//   $statement->bindValue()
+//
 
 //  execute(); выполняет запрос
 $statement->execute();
@@ -56,18 +59,3 @@ if (is_uploaded_file($_FILES['image']['tmp_name'])) { // проверяем за
 
 //  header - перенаправляет на страницу /index.php
 header("Location: /index.php");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
