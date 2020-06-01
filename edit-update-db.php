@@ -23,6 +23,7 @@ $statement->bindValue(1, $title);
 $statement->bindValue(2, $description);
 $statement->bindValue(3, $status);
 $statement->bindValue(4, $category_id);
+
 //
 // $statement->bindValue()
 //
